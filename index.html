@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Clipboard in the Cloud</title>
+    <link rel="apple-touch-icon" sizes="57x57" href="/static/img/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/static/img/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/static/img/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/static/img/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/static/img/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/static/img/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/static/img/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/static/img/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/static/img/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/static/img/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/static/img/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/img/favicon-16x16.png">
+    <link rel="manifest" href="/static/img/manifest.json">
+    <meta charset="UTF-8">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Clipboard in the Cloud">
+    <meta name="keywords" content="clipboard, copy, paste, LKMAKE">
+    <meta name="author" content="LKMAKE">
+    <link rel="stylesheet" href="/static/uikit/css/uikit.min.css">
+    <link rel="stylesheet" href="/static/uikit/css/components/notify.min.css">
+    <link rel="stylesheet" href="/static/css/copies.min.css">
+    <script src="/static/js/jquery.min.js"></script>
+    <script src="/static/js/filesize.min.js"></script>
+    <script src="/static/js/spark-md5.min.js"></script>
+    <script src="/static/js/moment.min.js"></script>
+    <script src="/static/js/js.cookie.min.js"></script>
+    <script src="/static/js/jquery-lang.min.js"></script>
+    <script src="/static/js/clipboard.min.js"></script>
+    <script src="/static/uikit/js/uikit.min.js"></script>
+    <script src="/static/uikit/js/components/lightbox.min.js"></script>
+    <script src="/static/uikit/js/components/notify.min.js"></script>
+    <script src="/static/js/langs.min.js"></script>
+
+    <script src="/static/js/copies.js"></script>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="navigation">
+            <div class="uk-clearfix">
+                <div id="apple-sign-out-button" class="uk-float-right"></div>
+                <div id="copies-action" class="uk-float-right">
+                    <div class="uk-button-dropdown" data-uk-dropdown="{delay: 3000}">
+                        <button class="uk-button-link action"><i class="uk-icon-gears uk-icon-small"></i></button>
+                        <div class="uk-dropdown uk-dropdown-bottom uk-dropdown-close">
+                            <ul class="uk-nav uk-nav-dropdown">
+                                <li class="uk-clearfix"><a href="#" onclick="clickToRefresh();";><i class="uk-icon-refresh"></i>&nbsp;&nbsp;<span lang="us">Refresh</span></a></li>
+                                <li class="uk-clearfix"><a href="#" onclick="clickToAdd();";><i class="uk-icon-plus"></i>&nbsp;&nbsp;<span lang="us">Add Copy</span></a></li>
+                                <li class="uk-clearfix"><a href="#" onclick="clickToSearch();";><i class="uk-icon-search"></i>&nbsp;&nbsp;<span lang="us">Search Copy</span></a></li>
+                                <li class="uk-nav-divider"></li>
+                                <li class="uk-clearfix"><a href="#" onclick="clickToShowStatus();";><i class="uk-icon-cloud"></i>&nbsp;&nbsp;<span lang="us">Service Status</span></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div id="copies-logo" class="logo uk-float-left">
+                    <a href="/"><img src="static/img/logo.png" width="48"/></a>
+                </div>
+            </div>
+        </div>
+        <div class="main uk-overflow-container">
+            <div id="welcome-wrapper" class="welcome uk-vertical-align uk-margin-large-top">
+                <div class="uk-vertical-align-middle">
+                    <h1><span lang="us">Welcome to Copies</span></h1>
+                    <p class="uk-text-large"><span lang="us">Your clipboard in the Cloud.</span></p>
+                    <a class="uk-button-link" href="https://itunes.apple.com/us/app/copies-2/id1225014382?ls=1&mt=8"><img src="/static/img/appstore-ios-us.svg" lang="us" /></a>&nbsp;&nbsp;
+                    <a class="uk-button-link" href="https://itunes.apple.com/us/app/copies-2/id1114802611?ls=1&mt=8"><img src="/static/img/appstore-macos-us.svg" lang="us" /></a>
+                    <center id="apple-sign-in-button" class="uk-margin"></center>
+                </div>
+            </div>
+            <div id="search-wrapper" class="search" style="display: none;">
+                <p class="uk-text-large">
+                    <span lang="us">Search:</span> <span id="search-keyword" class="uk-text-primary"></span>
+                    &nbsp;&nbsp;
+                    <button onclick="clickToEndSearch();" class="search-button uk-close-alt uk-close"></button>
+                </p>
+            </div>
+            <div id="add-wrapper" class="uk-modal">
+                <div class="uk-modal-dialog">
+                    <a class="uk-modal-close uk-close"></a>
+                    <div class="uk-modal-header">
+                        <p class="uk-text-large"><span lang="us">Add New Copy</span></p>
+                    </div>
+                    <div class="uk-tab-center">
+                        <ul class="uk-tab" data-uk-tab="{connect:'#add-wrapper-section'}">
+                            <li class="uk-active"><a href="#"><span lang="us">Text</span></a></li>
+                            <li><a href="#"><span lang="us">Image</span></a></li>
+                        </ul>
+                    </div>
+                    <ul id="add-wrapper-section" class="uk-switcher uk-margin">
+                        <li>
+                            <div class="uk-form">
+                                <div class="uk-grid">
+                                    <div class="uk-width-1-1">
+                                        <textarea id="add-text" rows="10" class="uk-width-1-1" placeholder="Enter text here..." lang="us"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="uk-placeholder uk-text-center uk-margin-top">
+                                <a href="#" class="uk-button uk-button-primary" onclick="clickToEndAdd();"><i class="uk-icon-cloud-upload"></i> <span lang="us">Save to Cloud</span></a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="uk-placeholder uk-text-center">
+                                <div class="uk-form-file uk-margin-large-top"><span lang="us">Select Image to Upload</span> <input id="add-image" type="file" accept="image/*"></div>
+                                <img id="add-image-thumbnail" src="" width="32" height="32" class="uk-border-circle uk-margin-large" />
+                                <p class="uk-text-bold uk-text-muted uk-margin"><span lang="us">Maximum file size: 20 MB</span></p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <table id="copies" class="uk-table uk-margin-small-top uk-margin-small-bottom">
+                <tbody></tbody>
+            </table>
+        </div>
+        <div class="bottom">
+            <button id="copies-load-more" class="uk-button uk-button-small uk-border-rounded uk-text-muted" onclick="clickToLoadMore();" style="display: none;">&nbsp;<span lang="us">More</span>&nbsp;</button>
+            <div id="loading-wrapper">
+                <div class="loading-bar"></div>
+                <div class="loading-bar"></div>
+                <div class="loading-bar"></div>
+                <div class="loading-bar"></div>
+                <div class="loading-bar"></div>
+            </div>
+        </div>
+        <div class="footer uk-text-muted">
+            <a href="about.html" style="vertical-align: middle;" class="uk-button-link uk-text-small"><span lang="us">About</span></a>
+            &nbsp;&nbsp;|&nbsp;&nbsp;
+            <a href="faq.html" style="vertical-align: middle;" class="uk-button-link uk-text-small"><span lang="us">FAQ</span></a>
+            &nbsp;&nbsp;|&nbsp;&nbsp;
+            <a href="https://support.lkmake.com" style="vertical-align: middle;" class="uk-button-link uk-text-small"><span lang="us">Support &amp; Feedback</span></a>
+            &nbsp;&nbsp;|&nbsp;&nbsp;
+            <a href="privacy.html" style="vertical-align: middle;" class="uk-button-link uk-text-small"><span lang="us">Privacy Policy</span></a>
+            &nbsp;&nbsp;|<div class="uk-button-dropdown uk-dropdown-close" data-uk-dropdown="{mode:'click'}">
+                <button class="uk-button-link uk-text-small"><img lang="us" src="/static/img/us@2x.png" width="16" />&nbsp;<span lang="us">Choose Language</span></button>
+                <div class="uk-dropdown uk-dropdown-bottom" style="top: 30px; left: 0px; text-align: left;">
+                    <ul class="uk-nav uk-nav-dropdown">
+                        <li class="uk-nav-header"><span lang="us">Choose Language</span></li>
+                        <li class="uk-nav-divider"></li>
+                        <li><a href="#" onclick="cll('us');"><img src="/static/img/us@2x.png" width="16" /> <span lang="us">English</span></a></li>
+                        <li><a href="#" onclick="cll('fr');"><img src="/static/img/fr@2x.png" width="16" /> <span lang="us">French</span></a></li>
+                        <li><a href="#" onclick="cll('kr');"><img src="/static/img/kr@2x.png" width="16" /> <span lang="us">Korean</span></a></li>
+                        <li><a href="#" onclick="cll('jp');"><img src="/static/img/jp@2x.png" width="16" /> <span lang="us">Japanese</span></a></li>
+                        <li><a href="#" onclick="cll('de');"><img src="/static/img/de@2x.png" width="16" /> <span lang="us">German</span></a></li>
+                        <li><a href="#" onclick="cll('ru');"><img src="/static/img/ru@2x.png" width="16" /> <span lang="us">Russian</span></a></li>
+                        <li><a href="#" onclick="cll('es');"><img src="/static/img/es@2x.png" width="16" /> <span lang="us">Spanish</span></a></li>
+                        <li><a href="#" onclick="cll('pt');"><img src="/static/img/pt@2x.png" width="16" /> <span lang="us">Portuguese</span></a></li>
+                        <li><a href="#" onclick="cll('zh-cn');"><img src="/static/img/cn@2x.png" width="16" /> <span lang="us">Simplified Chinese</span></a></li>
+                        <li><a href="#" onclick="cll('zh-tw');"><img src="/static/img/cn@2x.png" width="16" /> <span lang="us">Traditional Chinese</span></a></li>
+                    </ul>
+                </div>
+            </div>
+            <br />
+            <p class="uk-text-small"><span lang="us">A product by LKMAKE</span></p>
+            <br />
+        </div>
+    </div>
+    <script src="https://cdn.apple-cloudkit.com/ck/2/cloudkit.js" async></script>
+</body>
+</html>

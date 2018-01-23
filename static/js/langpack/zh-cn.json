@@ -69,6 +69,11 @@
         "FAQ": "常见问题",
         "What do you mean by user's private database?": "用户的私人数据库是什么意思？",
         "iCloud database is only accessible to its user, not to developers. We even do not known user's account address.": "iCloud 数据库只能由其用户访问，而不是开发人员。 我们甚至不知道用户的帐户地址。",
+        "Cloud sync not working on my phone, pad or web platform?": "云同步无法在我的手机，平板电脑或网络平台上工作？",
+        "Before setup cloud sync, please make sure that your iCloud account is ready, then turn on cloud sync option in the app.": "在设置云同步之前，请确保您的iCloud帐户已准备就绪，然后在应用程序中启用云同步选项。",
+        "The app is empty after startup, where do I find cloud sync option?": "启动后该应用程序是空的，我在哪里可以找到云同步选项？",
+        "If the app is newly installed on the phone or pad, please try to add some contents by copying from other apps. After that, touch and hold on some content to bring up the settings options.": "如果应用程序新安装在手机或平板电脑上，请尝试通过从其他应用程序复制来添加一些内容。 之后，触摸并按住某些内容即可调出设置选项。",
+        "Last modified: 22nd Jan, 2018": "最后修改日期：2018年1月22日",
 
         "__COMMENT__": "shared data",
 

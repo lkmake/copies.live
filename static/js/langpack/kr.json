@@ -69,6 +69,11 @@
         "FAQ": "자주하는 질문",
         "What do you mean by user's private database?": "사용자의 개인 데이터베이스 란 무엇입니까?",
         "iCloud database is only accessible to its user, not to developers. We even do not known user's account address.": "iCloud 데이터베이스는 개발자가 아닌 사용자 만 액세스 할 수 있습니다. 우리는 심지어 사용자의 계정 주소를 알지 못합니다.",
+        "Cloud sync not working on my phone, pad or web platform?": "내 휴대 전화, 패드 또는 웹 플랫폼에서 클라우드 동기화가 작동하지 않습니까?",
+        "Before setup cloud sync, please make sure that your iCloud account is ready, then turn on cloud sync option in the app.": "설정 클라우드 동기화 전에 iCloud 계정이 준비되었는지 확인한 다음 앱에서 클라우드 동기화 옵션을 사용 설정하십시오.",
+        "The app is empty after startup, where do I find cloud sync option?": "시작 후 앱이 비어 있습니다. 어디에서 클라우드 동기화 옵션을 찾을 수 있습니까?",
+        "If the app is newly installed on the phone or pad, please try to add some contents by copying from other apps. After that, touch and hold on some content to bring up the settings options.": "앱이 휴대 전화 나 패드에 새로 설치된 경우 다른 앱에서 복사하여 일부 콘텐츠를 추가하십시오. 그런 다음 일부 콘텐츠를 길게 터치하여 설정 옵션을 표시하십시오.",
+        "Last modified: 22nd Jan, 2018": "최종 수정 날짜 : 2018 년 1 월 22 일",
 
         "__COMMENT__": "shared data",
 

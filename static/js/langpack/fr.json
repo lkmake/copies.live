@@ -69,6 +69,11 @@
         "FAQ": "FAQ",
         "What do you mean by user's private database?": "Que voulez-vous dire par la base de données privée de l'utilisateur?",
         "iCloud database is only accessible to its user, not to developers. We even do not known user's account address.": "La base de données iCloud n'est accessible qu'aux utilisateurs et non aux développeurs. Nous ne connaissons même pas l'adresse du compte de l'utilisateur.",
+        "Cloud sync not working on my phone, pad or web platform?": "Cloud Sync ne fonctionne pas sur mon téléphone, mon clavier ou ma plateforme Web?",
+        "Before setup cloud sync, please make sure that your iCloud account is ready, then turn on cloud sync option in the app.": "Avant de configurer la synchronisation du cloud, assurez-vous que votre compte iCloud est prêt, puis activez l'option de synchronisation dans l'application.",
+        "The app is empty after startup, where do I find cloud sync option?": "L'application est vide après le démarrage, où puis-je trouver l'option de synchronisation du cloud?",
+        "If the app is newly installed on the phone or pad, please try to add some contents by copying from other apps. After that, touch and hold on some content to bring up the settings options.": "Si l'application est nouvellement installée sur le téléphone ou sur le clavier, essayez d'ajouter du contenu en copiant à partir d'autres applications. Après cela, touchez et maintenez un peu de contenu pour faire apparaître les options de paramètres.",
+        "Last modified: 22nd Jan, 2018": "Dernière modification: 22 janvier 2018",
 
         "__COMMENT__": "shared data",
 

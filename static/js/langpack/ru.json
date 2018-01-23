@@ -69,6 +69,11 @@
         "FAQ": "Вопросы-Ответы",
         "What do you mean by user's private database?": "Что вы имеете в виду под частной базе данных пользователя?",
         "iCloud database is only accessible to its user, not to developers. We even do not known user's account address.": "База данных ICloud доступна только для ее пользователей, а не для разработчиков. Мы даже не известны адреса учетной записи пользователя.",
+        "Cloud sync not working on my phone, pad or web platform?": "Облачная синхронизация не работает на моем телефоне, на пэде или веб-платформе?",
+        "Before setup cloud sync, please make sure that your iCloud account is ready, then turn on cloud sync option in the app.": "Перед настройкой синхронизации облака убедитесь, что ваша учетная запись iCloud готова, затем включите опцию облачной синхронизации в приложении.",
+        "The app is empty after startup, where do I find cloud sync option?": "Приложение пуст после запуска, где я могу найти параметр синхронизации облаков?",
+        "If the app is newly installed on the phone or pad, please try to add some contents by copying from other apps. After that, touch and hold on some content to bring up the settings options.": "Если приложение недавно установлено на телефоне или пэде, попробуйте добавить некоторое содержимое, скопировав его из других приложений. После этого коснитесь и удерживайте некоторый контент, чтобы вызвать параметры настроек.",
+        "Last modified: 22nd Jan, 2018": "Последнее изменение: 22 января 2018 г.",
 
         "__COMMENT__": "shared data",
 

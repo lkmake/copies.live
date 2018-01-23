@@ -69,6 +69,11 @@
         "FAQ": "よくある質問",
         "What do you mean by user's private database?": "ユーザーのプライベートデータベースはどういう意味ですか？",
         "iCloud database is only accessible to its user, not to developers. We even do not known user's account address.": "iCloudデータベースは、開発者ではなくユーザーのみがアクセスできます。 私たちはユーザーのアカウントアドレスも知らない。",
+        "Cloud sync not working on my phone, pad or web platform?": "私の電話、パッド、またはWebプラットフォームでクラウド同期が機能していませんか？",
+        "Before setup cloud sync, please make sure that your iCloud account is ready, then turn on cloud sync option in the app.": "セットアップクラウドを同期させる前に、iCloudアカウントの準備が整っていることを確認してから、アプリでクラウド同期オプションをオンにしてください。",
+        "The app is empty after startup, where do I find cloud sync option?": "起動後にアプリが空です。クラウド同期オプションはどこにありますか？",
+        "If the app is newly installed on the phone or pad, please try to add some contents by copying from other apps. After that, touch and hold on some content to bring up the settings options.": "アプリが携帯電話やパッドに新しくインストールされている場合は、他のアプリからコピーしていくつかのコンテンツを追加してみてください。 その後、一部のコンテンツを押し続けて設定オプションを表示します。",
+        "Last modified: 22nd Jan, 2018": "最終更新日：2018年1月22日",
 
         "__COMMENT__": "shared data",
 
